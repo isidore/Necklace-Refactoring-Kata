@@ -11,10 +11,7 @@ import necklaceRefactoringKata.packers.*;
 public class Packer {
 
     public static void packNecklace(Necklace item, JewelleryStorage storage) {
-        packItem(item, storage, new DiamondNecklacePacker(),
-                new SmallNecklacePacker(),
-                new PendantNecklacePacker(),
-                new DefaultNecklacePacker());
+        packItem(item, storage, new NecklacePacker());
     }
 
     private static void packItem(Jewellery item, JewelleryStorage storage, PackLogic...packers) {
