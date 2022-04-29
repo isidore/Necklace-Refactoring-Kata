@@ -11,13 +11,13 @@ import necklaceRefactoringKata.packers.*;
 public class Packer {
 
     public static void packNecklace(Necklace item, JewelleryStorage storage) {
-
-        var packers = new PackLogic[] {
-                new DiamondNecklacePacker(),
+        packItem(item, storage, new DiamondNecklacePacker(),
                 new SmallNecklacePacker(),
                 new PendantNecklacePacker(),
-                new DefaultNecklacePacker(),
-        };
+                new DefaultNecklacePacker());
+    }
+
+    private static void packItem(Necklace item, JewelleryStorage storage, PackLogic...packers) {
         for (PackLogic packer : packers) {
             if (packer.pack(item, storage)) {
                 return;
