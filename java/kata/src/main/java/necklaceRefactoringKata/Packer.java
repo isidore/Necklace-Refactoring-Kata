@@ -48,6 +48,7 @@ public class Packer {
         }
 
         packItem(item, storage,
+                new EarringDropPacker(),
                 new PendantNecklacePacker(),
                 new DefaultNecklacePacker(),
                 new DefaultJewelleryPacker()
