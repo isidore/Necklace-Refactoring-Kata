@@ -6,6 +6,7 @@ import necklaceRefactoringKata.jewellery.Jewel;
 import necklaceRefactoringKata.jewellery.Jewellery;
 import necklaceRefactoringKata.jewellery.Necklace;
 import necklaceRefactoringKata.jewellery.PendantNecklace;
+import necklaceRefactoringKata.packers.*;
 
 public class Packer {
 

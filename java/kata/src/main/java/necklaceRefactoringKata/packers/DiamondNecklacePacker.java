@@ -1,5 +1,6 @@
-package necklaceRefactoringKata;
+package necklaceRefactoringKata.packers;
 
+import necklaceRefactoringKata.JewelleryStorage;
 import necklaceRefactoringKata.jewellery.Jewel;
 import necklaceRefactoringKata.jewellery.Jewellery;
 
