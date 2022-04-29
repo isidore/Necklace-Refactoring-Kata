@@ -20,6 +20,12 @@ public class Packer {
         } else {
             storage.tree.add(item);
         }
+        var packers = new PackerApplesauce[] {};
+        for (PackerApplesauce packer : packers) {
+            if (packer.pack(item, storage)) {
+                return;
+            }
+        }
     }
 
     public static void pack(Jewellery item, JewelleryStorage storage) {
