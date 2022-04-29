@@ -38,7 +38,11 @@ class PackNecklaceTests {
         Jewellery jewellery = new Pendant(Jewel.Pearl);
         Packer.pack(new PendantNecklace(jewel, necklaceType, necklace, jewellery), storage);
 
+        var jewelleries = new Jewellery[]{};
+        for (Jewellery j : jewelleries) {
+            Packer.pack(j, storage);
+        }
+
         JsonApprovals.verifyAsJson(storage);
-        // TODO: check if packed in right container
     }
 }
