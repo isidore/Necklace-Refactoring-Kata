@@ -35,7 +35,8 @@ class PackNecklaceTests {
                 new PendantNecklace(Jewel.Plain,
                         NecklaceType.LongChain,
                         new Necklace(Jewel.Plain, NecklaceType.LongChain),
-                        new Pendant(Jewel.Pearl))
+                        new Pendant(Jewel.Pearl)),
+                new Earring(Jewel.Amber, EarringType.Stud)
         };
         for (Jewellery j : jewelleries) {
             Packer.pack(j, storage);

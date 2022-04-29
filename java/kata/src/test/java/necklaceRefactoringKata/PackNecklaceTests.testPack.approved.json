@@ -4,6 +4,10 @@
     "topShelf": [
       {
         "stone": "Pearl"
+      },
+      {
+        "type": "Stud",
+        "stone": "Amber"
       }
     ],
     "mainSection": []
