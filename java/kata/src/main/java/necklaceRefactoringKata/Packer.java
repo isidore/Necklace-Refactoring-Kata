@@ -45,13 +45,10 @@ public class Packer {
         } else if (item instanceof Earring earring && earring.type == EarringType.Drop) {
             storage.box.mainSection.add(earring);
             return removeItem(item, storage);
-        } else if (item instanceof PendantNecklace pendantNecklace) {
-            storage.tree.add(pendantNecklace.chain);
-            storage.box.topShelf.add(pendantNecklace.pendant);
-            return removeItem(item, storage);
         }
 
         packItem(item, storage,
+                new PendantNecklacePacker(),
                 new DefaultNecklacePacker(),
                 new DefaultJewelleryPacker()
         );
