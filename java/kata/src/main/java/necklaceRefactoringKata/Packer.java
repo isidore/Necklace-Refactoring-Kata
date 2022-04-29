@@ -13,11 +13,9 @@ public class Packer {
         if (item.stone == Jewel.Diamond) {
             storage.safe.add(item);
             return;
-        } else if (!item.isLarge()) {
-            storage.box.topShelf.add(item);
-            return;
         }
         var packers = new PackLogic[] {
+                new SmallNecklacePacker(),
                 new PendantNecklacePacker(),
                 new DefaultNecklacePacker(),
         };
