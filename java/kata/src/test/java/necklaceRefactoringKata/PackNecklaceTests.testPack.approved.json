@@ -41,6 +41,10 @@
     {
       "type": "Hoop",
       "stone": "Amber"
+    },
+    {
+      "type": "Beads",
+      "stone": "Amber"
     }
   ],
   "travelRoll": [],

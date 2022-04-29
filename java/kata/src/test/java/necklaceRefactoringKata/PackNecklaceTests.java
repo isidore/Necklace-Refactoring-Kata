@@ -28,7 +28,9 @@ class PackNecklaceTests {
     void testPack() {
         var storage = new JewelleryStorage();
         var earingsInTravelRoll = new Earring(Jewel.Amber, EarringType.Stud);
+        var largeInTravelRoll = new Necklace(Jewel.Amber, NecklaceType.Beads);
         storage.travelRoll.add(earingsInTravelRoll);
+        storage.travelRoll.add(largeInTravelRoll);
         var jewelleries = new Jewellery[]{
                 new Necklace(Jewel.Pearl, NecklaceType.Beads),
                 new Necklace(Jewel.Diamond, NecklaceType.Beads),
@@ -43,6 +45,7 @@ class PackNecklaceTests {
                 new Earring(Jewel.Plain, EarringType.Drop),
                 new Bracelet(Jewel.Plain, BraceletType.Tennis),
                 earingsInTravelRoll,
+                largeInTravelRoll,
         };
         for (Jewellery j : jewelleries) {
             Packer.pack(j, storage);
