@@ -17,7 +17,7 @@ public class Packer {
                 new DefaultNecklacePacker());
     }
 
-    private static void packItem(Necklace item, JewelleryStorage storage, PackLogic...packers) {
+    private static void packItem(Jewellery item, JewelleryStorage storage, PackLogic...packers) {
         for (PackLogic packer : packers) {
             if (packer.pack(item, storage)) {
                 return;
@@ -29,6 +29,7 @@ public class Packer {
         if (storage.IsInTravelRoll(item) && !item.isLarge()) {
             storage.box.topShelf.add(item);
             storage.travelRoll.remove(item);
+            return;
         } else if (item.stone == Jewel.Diamond) {
             storage.safe.add(item);
         } else if (item.isSmall()) {
@@ -47,6 +48,8 @@ public class Packer {
         } else {
             storage.dresserTop.add(item);
         }
+
+        packItem(item, storage);
 
         if (storage.IsInTravelRoll(item)) {
             storage.travelRoll.remove(item);
