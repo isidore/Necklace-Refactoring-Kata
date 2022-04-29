@@ -28,6 +28,7 @@ public class Packer {
     public static void pack(Jewellery item, JewelleryStorage storage) {
         if (storage.IsInTravelRoll(item) && !item.isLarge()) {
             storage.box.topShelf.add(item);
+            storage.travelRoll.remove(item);
         } else if (item.stone == Jewel.Diamond) {
             storage.safe.add(item);
         } else if (item.isSmall()) {
@@ -47,8 +48,9 @@ public class Packer {
             storage.dresserTop.add(item);
         }
 
-        if (storage.IsInTravelRoll(item))
+        if (storage.IsInTravelRoll(item)) {
             storage.travelRoll.remove(item);
+        }
     }
 
 }
