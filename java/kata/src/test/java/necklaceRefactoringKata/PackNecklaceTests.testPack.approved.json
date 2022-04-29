@@ -8,9 +8,18 @@
       {
         "type": "Stud",
         "stone": "Amber"
+      },
+      {
+        "type": "Drop",
+        "stone": "Amber"
       }
     ],
-    "mainSection": []
+    "mainSection": [
+      {
+        "type": "Drop",
+        "stone": "Plain"
+      }
+    ]
   },
   "tree": [
     {
@@ -24,6 +33,10 @@
     {
       "type": "LongChain",
       "stone": "Plain"
+    },
+    {
+      "type": "Hoop",
+      "stone": "Amber"
     }
   ],
   "travelRoll": [],
