@@ -5,7 +5,6 @@ import necklaceRefactoringKata.jewellery.EarringType;
 import necklaceRefactoringKata.jewellery.Jewel;
 import necklaceRefactoringKata.jewellery.Jewellery;
 import necklaceRefactoringKata.jewellery.Necklace;
-import necklaceRefactoringKata.jewellery.PendantNecklace;
 import necklaceRefactoringKata.packers.*;
 
 public class Packer {
@@ -35,9 +34,6 @@ public class Packer {
             return removeItem(item, storage);
         } else if (item instanceof Earring earring && earring.type == EarringType.Hoop) {
             storage.tree.add(earring);
-            return removeItem(item, storage);
-        } else if (item instanceof Earring earring && earring.type == EarringType.Drop && earring.stone != Jewel.Plain) {
-            storage.box.topShelf.add(earring);
             return removeItem(item, storage);
         }
 
