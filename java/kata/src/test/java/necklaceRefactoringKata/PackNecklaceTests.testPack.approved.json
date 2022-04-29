@@ -12,6 +12,10 @@
       {
         "type": "Drop",
         "stone": "Amber"
+      },
+      {
+        "type": "Stud",
+        "stone": "Amber"
       }
     ],
     "mainSection": [
@@ -46,5 +50,10 @@
       "stone": "Diamond"
     }
   ],
-  "dresserTop": []
+  "dresserTop": [
+    {
+      "type": "Tennis",
+      "stone": "Plain"
+    }
+  ]
 }
