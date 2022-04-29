@@ -16,15 +16,12 @@ public class Packer {
         } else if (!item.isLarge()) {
             storage.box.topShelf.add(item);
             return;
-        } else if (item instanceof PendantNecklace pendantNecklace) {
-            storage.tree.add(pendantNecklace.chain);
-            storage.box.topShelf.add(pendantNecklace.pendant);
-            return;
         }
-        var packers = new PackerApplesauce[] {
-                new DefaultNecklacePacker()
+        var packers = new PackLogic[] {
+                new PendantNecklacePacker(),
+                new DefaultNecklacePacker(),
         };
-        for (PackerApplesauce packer : packers) {
+        for (PackLogic packer : packers) {
             if (packer.pack(item, storage)) {
                 return;
             }
