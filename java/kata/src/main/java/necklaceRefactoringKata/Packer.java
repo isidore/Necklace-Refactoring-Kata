@@ -49,12 +49,13 @@ public class Packer {
             storage.tree.add(pendantNecklace.chain);
             storage.box.topShelf.add(pendantNecklace.pendant);
             return removeItem(item, storage);
-        } else if (item instanceof Necklace necklace) {
-            storage.tree.add(necklace);
-            return removeItem(item, storage);
         }
 
-        packItem(item, storage, new DefaultJewelleryPacker());
+        packItem(item, storage,
+                new DefaultNecklacePacker(),
+                new DefaultJewelleryPacker()
+        );
+        removeItem(item, storage);
         return true;
     }
 
