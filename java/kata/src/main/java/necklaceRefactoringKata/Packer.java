@@ -12,15 +12,21 @@ public class Packer {
     public static void packNecklace(Necklace item, JewelleryStorage storage) {
         if (item.stone == Jewel.Diamond) {
             storage.safe.add(item);
+            return;
         } else if (!item.isLarge()) {
             storage.box.topShelf.add(item);
+            return;
         } else if (item instanceof PendantNecklace pendantNecklace) {
             storage.tree.add(pendantNecklace.chain);
             storage.box.topShelf.add(pendantNecklace.pendant);
-        } else {
-            storage.tree.add(item);
+            return;
         }
-        var packers = new PackerApplesauce[] {};
+        var packers = new PackerApplesauce[] {
+                (i, s) -> {
+                    s.tree.add(i);
+                    return true;
+                }
+        };
         for (PackerApplesauce packer : packers) {
             if (packer.pack(item, storage)) {
                 return;
