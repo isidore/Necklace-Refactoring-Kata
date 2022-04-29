@@ -22,13 +22,8 @@ public class Packer {
     }
 
     public static boolean pack(Jewellery item, JewelleryStorage storage) {
-        if (storage.IsInTravelRoll(item) && !item.isLarge()) {
-            storage.box.topShelf.add(item);
-            storage.travelRoll.remove(item);
-            return true;
-        }
-
         packItem(item, storage,
+                new TravelRollPacker(),
                 new DiamondPacker(),
                 new SmallPacker(),
                 new EarringHoopPacker(),
