@@ -3,8 +3,7 @@
     "ringCompartment": [],
     "topShelf": [
       {
-        "type": "Chain",
-        "stone": "Amber"
+        "stone": "Pearl"
       }
     ],
     "mainSection": []
@@ -13,6 +12,14 @@
     {
       "type": "Beads",
       "stone": "Pearl"
+    },
+    {
+      "type": "Chain",
+      "stone": "Amber"
+    },
+    {
+      "type": "LongChain",
+      "stone": "Plain"
     }
   ],
   "travelRoll": [],
