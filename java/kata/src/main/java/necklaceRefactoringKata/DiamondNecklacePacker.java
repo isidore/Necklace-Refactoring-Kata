@@ -6,10 +6,9 @@ import necklaceRefactoringKata.jewellery.Jewellery;
 public class DiamondNecklacePacker implements PackLogic {
     @Override
     public boolean pack(Jewellery item, JewelleryStorage storage) {
-        if (item.stone == Jewel.Diamond) {
-            storage.safe.add(item);
-            return true;
+        if (item.stone != Jewel.Diamond) {
+            return false;
         }
-        return false;
+        return storage.safe.add(item);
     }
 }
