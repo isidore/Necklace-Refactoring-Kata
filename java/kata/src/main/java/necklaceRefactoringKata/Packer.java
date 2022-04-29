@@ -22,10 +22,7 @@ public class Packer {
             return;
         }
         var packers = new PackerApplesauce[] {
-                (i, s) -> {
-                    s.tree.add(i);
-                    return true;
-                }
+                new DefaultNecklacePacker()
         };
         for (PackerApplesauce packer : packers) {
             if (packer.pack(item, storage)) {
@@ -59,4 +56,5 @@ public class Packer {
         if (storage.IsInTravelRoll(item))
             storage.travelRoll.remove(item);
     }
+
 }
