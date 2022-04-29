@@ -4,7 +4,6 @@ import necklaceRefactoringKata.JewelleryStorage;
 import necklaceRefactoringKata.jewellery.Earring;
 import necklaceRefactoringKata.jewellery.EarringType;
 import necklaceRefactoringKata.jewellery.Jewellery;
-import necklaceRefactoringKata.packers.PackLogic;
 
 public class EarringDropPacker implements PackLogic {
     @Override

@@ -39,9 +39,6 @@ public class Packer {
         } else if (item instanceof Earring earring && earring.type == EarringType.Drop && earring.stone != Jewel.Plain) {
             storage.box.topShelf.add(earring);
             return removeItem(item, storage);
-        } else if (item instanceof Earring earring && earring.type == EarringType.Drop) {
-            storage.box.mainSection.add(earring);
-            return removeItem(item, storage);
         }
 
         packItem(item, storage,
