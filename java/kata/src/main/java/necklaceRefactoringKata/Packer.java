@@ -26,12 +26,10 @@ public class Packer {
             storage.box.topShelf.add(item);
             storage.travelRoll.remove(item);
             return true;
-        } else if (item.stone == Jewel.Diamond) {
-            storage.safe.add(item);
-            return removeItem(item, storage);
         }
 
         packItem(item, storage,
+                new DiamondPacker(),
                 new SmallPacker(),
                 new EarringHoopPacker(),
                 new EarringDropPacker(),
