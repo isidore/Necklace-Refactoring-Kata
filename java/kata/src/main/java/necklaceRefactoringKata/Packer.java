@@ -29,9 +29,6 @@ public class Packer {
         } else if (item.stone == Jewel.Diamond) {
             storage.safe.add(item);
             return removeItem(item, storage);
-        } else if (item.isSmall()) {
-            storage.box.topShelf.add(item);
-            return removeItem(item, storage);
         }
 
         packItem(item, storage,
