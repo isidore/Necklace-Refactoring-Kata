@@ -26,19 +26,17 @@ class PackNecklaceTests {
     }
     @Test
     void testPack() {
-        var item = new Necklace(Jewel.Pearl, NecklaceType.Beads);
         var storage = new JewelleryStorage();
 
-        Packer.pack(item, storage);
-        Packer.pack(new Necklace(Jewel.Diamond, NecklaceType.Beads), storage);
-        Packer.pack(new Necklace(Jewel.Amber, NecklaceType.Chain), storage);
-        Jewel jewel = Jewel.Plain;
-        NecklaceType necklaceType = NecklaceType.LongChain;
-        Necklace necklace = new Necklace(jewel, necklaceType);
-        Jewellery jewellery = new Pendant(Jewel.Pearl);
-        Packer.pack(new PendantNecklace(jewel, necklaceType, necklace, jewellery), storage);
-
-        var jewelleries = new Jewellery[]{};
+        var jewelleries = new Jewellery[]{
+                new Necklace(Jewel.Pearl, NecklaceType.Beads),
+                new Necklace(Jewel.Diamond, NecklaceType.Beads),
+                new Necklace(Jewel.Amber, NecklaceType.Chain),
+                new PendantNecklace(Jewel.Plain,
+                        NecklaceType.LongChain,
+                        new Necklace(Jewel.Plain, NecklaceType.LongChain),
+                        new Pendant(Jewel.Pearl))
+        };
         for (Jewellery j : jewelleries) {
             Packer.pack(j, storage);
         }
