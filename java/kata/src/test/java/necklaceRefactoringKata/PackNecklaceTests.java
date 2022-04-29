@@ -15,6 +15,8 @@ class PackNecklaceTests {
         var storage = new JewelleryStorage();
 
         Packer.packNecklace(item, storage);
+        Packer.packNecklace(new Necklace(Jewel.Diamond, NecklaceType.Beads), storage);
+        Packer.packNecklace(new Necklace(Jewel.Amber, NecklaceType.Chain), storage);
 
         JsonApprovals.verifyAsJson(storage);
         // TODO: check if packed in right container

@@ -1,7 +1,12 @@
 {
   "box": {
     "ringCompartment": [],
-    "topShelf": [],
+    "topShelf": [
+      {
+        "type": "Chain",
+        "stone": "Amber"
+      }
+    ],
     "mainSection": []
   },
   "tree": [
@@ -11,6 +16,11 @@
     }
   ],
   "travelRoll": [],
-  "safe": [],
+  "safe": [
+    {
+      "type": "Beads",
+      "stone": "Diamond"
+    }
+  ],
   "dresserTop": []
 }
