@@ -25,35 +25,44 @@ public class Packer {
         }
     }
 
-    public static void pack(Jewellery item, JewelleryStorage storage) {
+    public static boolean pack(Jewellery item, JewelleryStorage storage) {
         if (storage.IsInTravelRoll(item) && !item.isLarge()) {
             storage.box.topShelf.add(item);
             storage.travelRoll.remove(item);
-            return;
+            return true;
         } else if (item.stone == Jewel.Diamond) {
             storage.safe.add(item);
+            return removeItem(item, storage);
         } else if (item.isSmall()) {
             storage.box.topShelf.add(item);
+            return removeItem(item, storage);
         } else if (item instanceof Earring earring && earring.type == EarringType.Hoop) {
             storage.tree.add(earring);
+            return removeItem(item, storage);
         } else if (item instanceof Earring earring && earring.type == EarringType.Drop && earring.stone != Jewel.Plain) {
             storage.box.topShelf.add(earring);
+            return removeItem(item, storage);
         } else if (item instanceof Earring earring && earring.type == EarringType.Drop) {
             storage.box.mainSection.add(earring);
+            return removeItem(item, storage);
         } else if (item instanceof PendantNecklace pendantNecklace) {
             storage.tree.add(pendantNecklace.chain);
             storage.box.topShelf.add(pendantNecklace.pendant);
+            return removeItem(item, storage);
         } else if (item instanceof Necklace necklace) {
             storage.tree.add(necklace);
-        } else {
-            storage.dresserTop.add(item);
+            return removeItem(item, storage);
         }
 
-        packItem(item, storage);
+        packItem(item, storage, new DefaultJewelleryPacker());
+        return true;
+    }
 
+    private static boolean removeItem(Jewellery item, JewelleryStorage storage) {
         if (storage.IsInTravelRoll(item)) {
             storage.travelRoll.remove(item);
         }
+        return true;
     }
 
 }
