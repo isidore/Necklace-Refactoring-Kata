@@ -35,6 +35,7 @@ public class Packer {
         }
 
         packItem(item, storage,
+                new SmallPacker(),
                 new EarringHoopPacker(),
                 new EarringDropPacker(),
                 new PendantNecklacePacker(),
