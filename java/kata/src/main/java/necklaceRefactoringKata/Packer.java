@@ -32,9 +32,6 @@ public class Packer {
         } else if (item.isSmall()) {
             storage.box.topShelf.add(item);
             return removeItem(item, storage);
-        } else if (item instanceof Earring earring && earring.type == EarringType.Hoop) {
-            storage.tree.add(earring);
-            return removeItem(item, storage);
         }
 
         packItem(item, storage,
