@@ -4,6 +4,8 @@ package necklaceRefactoringKata;
 import necklaceRefactoringKata.jewellery.Jewel;
 import necklaceRefactoringKata.jewellery.Necklace;
 import necklaceRefactoringKata.jewellery.NecklaceType;
+import org.approvaltests.Approvals;
+import org.approvaltests.JsonApprovals;
 import org.junit.jupiter.api.Test;
 
 class PackNecklaceTests {
@@ -14,6 +16,7 @@ class PackNecklaceTests {
 
         Packer.packNecklace(item, storage);
 
+        JsonApprovals.verifyAsJson(storage);
         // TODO: check if packed in right container
     }
 }

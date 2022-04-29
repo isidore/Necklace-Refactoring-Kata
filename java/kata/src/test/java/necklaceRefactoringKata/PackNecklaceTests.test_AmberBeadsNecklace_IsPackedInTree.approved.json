@@ -1,0 +1,16 @@
+{
+  "box": {
+    "ringCompartment": [],
+    "topShelf": [],
+    "mainSection": []
+  },
+  "tree": [
+    {
+      "type": "Beads",
+      "stone": "Pearl"
+    }
+  ],
+  "travelRoll": [],
+  "safe": [],
+  "dresserTop": []
+}

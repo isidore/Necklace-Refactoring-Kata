@@ -1,6 +1,6 @@
 .vs
 .idea/
-
+*.received.*
 ## Visual Studio .gitignore files
 ##
 ## Ignore Visual Studio temporary files, build results, and
