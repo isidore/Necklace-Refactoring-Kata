@@ -10,11 +10,9 @@ import necklaceRefactoringKata.jewellery.PendantNecklace;
 public class Packer {
 
     public static void packNecklace(Necklace item, JewelleryStorage storage) {
-        if (item.stone == Jewel.Diamond) {
-            storage.safe.add(item);
-            return;
-        }
+
         var packers = new PackLogic[] {
+                new DiamondNecklacePacker(),
                 new SmallNecklacePacker(),
                 new PendantNecklacePacker(),
                 new DefaultNecklacePacker(),
